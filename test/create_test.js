@@ -8,3 +8,4 @@ describe('Creating records', () => {
     joe.save()
   })
 })
+
