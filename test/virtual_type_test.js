@@ -7,12 +7,13 @@ describe('Virtual types', () => {
       name: 'Joe',
       posts: [{ title: 'PostTitle' }]
     })
+    joe.save()
+      .then(() => User.findOne({ name: 'Joe' }))
+      .then((user) => {
+        assert(joe.postCount === 1)
+        done()
+      })
   })
 
-  joe.savve()
-    .then(() => User.findOne({ name: 'Joe' }))
-    .then((user) => {
-      assert(joe.postCount === 1)
-      done()
-    })
+
 })
